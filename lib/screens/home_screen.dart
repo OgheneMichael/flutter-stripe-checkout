@@ -17,11 +17,9 @@ class _HomeScreenState extends State<HomeScreen> {
     _handleButtonLoading();
     final response = await PaymentService().stripeCheckout();
     _handleButtonLoading();
-
     Navigator.of(context).push(MaterialPageRoute(
       builder: (_) => CheckoutScreen(sessionId: response.data['id']),
     ));
-    print(response.data['id']);
   }
 
   @override
