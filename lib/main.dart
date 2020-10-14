@@ -12,8 +12,12 @@ class MyApp extends StatelessWidget {
       title: 'Stripe Checkout',
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: Colors.grey[200],
       ),
-      home: HomeScreen(),
+      routes: {
+        '/': (_) => HomeScreen(),
+        '/success': (_) => SuccessScreen(),
+      },
     );
   }
 }
